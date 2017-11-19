@@ -1,0 +1,57 @@
+<!Doctype html>
+<html lang="en-US">
+	<head>
+		<title>Ably-Angular Admin</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<div ng-app="myApp" ng-controller="myCtrl">
+				<div class="col-md-6">
+					<h3>Food orders</h3>
+					<ul style="margin-bottom: 15px;list-style-type: none">
+						<li ng-repeat="order in orders">
+						    <h5>{{order.name}}'s Orders</h5>
+						    <p ng-repeat="(i,x) in order.order">
+						      		{{(i+1) +'. '+ x}}
+						    </p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-6">
+					<h3>Confirm Receipt</h3>
+					<input type="text" class="form-control" ng-model="message"><br>
+					<button class="btn btn-primary" ng-click="send()">Reply</button>
+				</div>
+				<br>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="https://cdn.ably.io/lib/ably.min-1.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script>
+			var app = angular.module('myApp', []);
+			app.controller('myCtrl', function($scope) {
+				$scope.ably = new Ably.Realtime('ABLY_API_KEY');
+  				$scope.receive = $scope.ably.channels.get('order');
+  				$scope.respond = $scope.ably.channels.get('reply');
+
+				$scope.orders=[];
+				$scope.receive.subscribe(function(message){
+					$scope.pushData(message.data)
+				})
+				$scope.pushData = function(data){
+					$scope.$apply(function(){
+						$scope.orders.push(data)
+					})
+				}
+			    $scope.send = function(){
+			    	$scope.respond.publish('response',$scope.message);
+			    	$scope.new = ""
+			    }
+			})
+		</script>
+		<div id="toInsert"></div>
+	</body>
+</html>
