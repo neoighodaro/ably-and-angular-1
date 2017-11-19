@@ -1,37 +1,30 @@
-# Ably-Angularjs
+# Example of using Ably and Angular 1
+This is a demo on how to use Ably and Angular 1
+[![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/neoighodaro?utm_source=github&utm_medium=button&utm_term=neoighodaro&utm_campaign=github)
 
-## Getting started with Ably and AngularJs - Making a food ordering app
+![](https://www.dropbox.com/s/ycygvc7ykc8rrgt/Getting-Started-with-Ably-and-Angular-1.gif?raw=1)
 
-This project is designed as part of an article on using Ably's Realtime Data Devliery platform to build real time applications using AngularJS.
-
-It is really simple to get into. I made two simple html pages with bootstrap, pulling in Ably and Angular to make the app work.
-
-There is really nothing to install. Just download and get started right away.
-
-## Requirements
-
-In order to run these tutorials locally, you will need an Ably `API key`. If you are not already signed up on [Ably](https://ably.io), you should [sign up now for a free Ably account](https://ably.io). Once you have an Ably account:
-
-	
-> 1. Log into your app dashboard	
-> 2. Under “Your apps”, click on “Manage app” for any app you wish to use for this tutorial, or create a new one with the “Create New App” button	
-> 3. Click on the “API Keys” tab	
-> 4. Copy the secret “API Key” value from your Root key and store it so that you can use it later in this tutorial
-
+### Requirements
+- Have knowledge of HTML and CSS.
+- Know JavaScript and Angular 1.
+- An Ably API Key. Go [here to get yours](https://ably.io).
+- Basic knowledge of CLI.
 
 ## Setup
 You would need to clone this repo and add your API key to the document. Go to your `terminal` and run the following commands:
 ```shell
-$ git clone https://github.com/chiefoleka/ably-angularjs
-$ cd ably-angularjs
-$ nano index.html # replace API-Key-Here with your API Key
-$ nano admin.html # replace API-Key-Here with your API Key
+$ git clone https://github.com/neoighodaro/ably-and-angular-1.git appname
+$ cd appname
 ```
-Once you are done, we are set to run this tutorial. Feel free to use any editor of your choice to edit both files.
-If you have apache setup locally, then you can easily create a php server like this:
+
+Update `ABLY_API_KEY` in both HTML files. Once you are done, we are set to run this tutorial. Feel free to use any editor of your choice to edit both files.
+
+If you have PHP setup locally, then you can easily create a PHP server like this:
+
 ```shell
 $ php -S localhost:8000
 ```
+
 Go to your browser and visit `http://localhost:8000` to see the app.
 
 That's it.
