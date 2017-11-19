@@ -1,7 +1,7 @@
 # Example of using Ably and Angular 1
-This is a demo on how to use Ably and Angular 1
-
 [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/neoighodaro?utm_source=github&utm_medium=button&utm_term=neoighodaro&utm_campaign=github)
+
+This is a demo on how to use Ably and Angular 1
 
 ![](https://www.dropbox.com/s/ycygvc7ykc8rrgt/Getting-Started-with-Ably-and-Angular-1.gif?raw=1)
 
